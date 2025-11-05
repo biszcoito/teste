@@ -504,10 +504,14 @@
         }
 
         .time-slots {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
-            gap: var(--space-8);
-            margin-top: var(--space-12);
+            width: 100%;
+        }
+
+            width: 100% !important;
+        }
+
+            width: 100% !important;
+            display: block;
         }
 
         .time-slot {
@@ -1311,18 +1315,18 @@
             
             container.innerHTML = `
                 <div style="margin-bottom: 16px;">
-                    <label style="font-weight: bold; color: var(--color-primary);">
+                    <label style="font-weight: bold; color: var(--color-primary); display: block; margin-bottom: 12px;">
                         Arraste para selecionar o horário (Duração: ${totalDuration} min)
                     </label>
-                    <div id="timeSliderContainer" style="position: relative; height: 80px; background: #f0f0f0; border-radius: 12px; margin-top: 12px; overflow: visible; border: 2px solid var(--color-border);">
+                    <div id="timeSliderContainer" style="position: relative; width: 100%; height: 80px; background: #f0f0f0; border-radius: 12px; overflow: visible; border: 2px solid var(--color-border);">
                         <div id="timeRangeSlider" style="position: absolute; height: 100%; background: var(--color-primary); opacity: 0.5; cursor: grab; border-radius: 8px; border: 3px solid var(--color-primary); top: 0;"></div>
                         <div id="timeRangeLabels" style="display: flex; justify-content: space-between; padding: 8px 12px; position: relative; z-index: 10; pointer-events: none;">
                             <span style="font-size: 12px; font-weight: bold;">09:00</span>
                             <span style="font-size: 12px; font-weight: bold;">18:00</span>
                         </div>
-                        <div id="selectedTimeDisplay" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-weight: bold; color: white; z-index: 11; pointer-events: none;"></div>
+                        <div id="selectedTimeDisplay" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-weight: bold; color: white; z-index: 11; pointer-events: none; text-shadow: 1px 1px 2px rgba(0,0,0,0.5);"></div>
                     </div>
-                    <div id="availabilityMessage" style="margin-top: 8px; font-size: 13px;"></div>
+                    <div id="availabilityMessage" style="margin-top: 12px; font-size: 13px; font-weight: 500;"></div>
                 </div>
             `;
 
